@@ -13,7 +13,7 @@ const Layout: React.FC<PropsWithChildren & { fullWidth?: boolean }> = ({
       <Nav />
       <main
         className={`mx-auto min-h-[calc(100vh-75px)] w-full ${
-          fullWidth ? "max-w-[1440px]" : "max-w-full"
+          fullWidth ? "max-w-full" : "max-w-[1440px]"
         }`}
         {...props}
       >
