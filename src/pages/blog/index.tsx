@@ -24,7 +24,7 @@ const Blog: React.FC<{ posts: BlogPost[] }> = ({ posts }) => {
   return (
     <Layout className="max-w-5xl">
       <h1 className="text-5xl text-base-content">Blog Posts</h1>
-      <section className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(270px,1fr))] gap-4">
+      <section className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
         {posts
           .map((post) => ({
             ...post,
