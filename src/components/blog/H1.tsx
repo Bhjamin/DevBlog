@@ -6,7 +6,7 @@ const H1: React.FC<PropsWithChildren & { className?: string }> = ({
   children,
 }) => {
   return (
-    <h2 className={`text-4xl font-bold ${className || ""}`}>{children}</h2>
+    <h1 className={`text-6xl font-bold ${className || ""}`}>{children}</h1>
   );
 };
 

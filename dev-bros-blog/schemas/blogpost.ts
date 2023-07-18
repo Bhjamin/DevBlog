@@ -27,7 +27,7 @@ export default {
     {
       name: 'content',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [{type: 'image'}, {type: 'block'}],
       title: 'Content',
     },
   ],

@@ -16,7 +16,7 @@ export type BlogPost = {
     _type: string;
     _key: string;
     style: string;
-    children: { _type: string; _key: string; text: string }[];
+    children: { _type: string; _key: string; text: string; marks: string[] }[];
   }[];
 };
 

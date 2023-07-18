@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Layout from "~/components/Layout";
 import { motion, AnimatePresence } from "framer-motion";
 import { array } from "zod";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const squares = Array(50).fill("");
@@ -20,24 +21,24 @@ const Home: NextPage = () => {
   };
 
   const getRandomSize = () => {
-    const size = Math.floor(Math.random() * 20) + 5
+    const size = Math.floor(Math.random() * 20) + 5;
 
-    return size
-  }
+    return size;
+  };
 
   const getRandomColor = () => {
-    const randNum = Math.round(Math.random()) + 1
+    const randNum = Math.round(Math.random()) + 1;
 
-    if(randNum === 1){
-      return 'bg-primary'
+    if (randNum === 1) {
+      return "bg-primary";
     } else {
-      return 'bg-secondary'
+      return "bg-secondary";
     }
-  }
+  };
 
   return (
     <>
-      <Layout fullWidth className="bg-base-100">
+      <Layout fullWidth className="max-w-[100vw] overflow-x-hidden bg-base-100">
         <div className="flex h-full flex-col items-center bg-base-100">
           <h1 className=" z-10 m-4 text-3xl text-base-content lg:text-6xl">
             Welcome to the{" "}
@@ -46,16 +47,23 @@ const Home: NextPage = () => {
             </span>
           </h1>
 
+          <Link
+            href="/blog"
+            className="flex h-2/3 items-center justify-center rounded-xl bg-purple-500 p-2 text-xl text-primary shadow-2xl lg:text-3xl"
+          >
+            Blog Posts
+          </Link>
+
           <span className=" z-1 absolute -bottom-3 h-6 w-6 rotate-45 bg-base-100 lg:-bottom-5 lg:h-10 lg:w-10" />
         </div>
         {squares.map((square, i) => {
           const randX = getRandomNum();
           const randomDelay = getRandomDelay();
-          const randomSize = getRandomSize()
-          const randomColor = getRandomColor()
+          const randomSize = getRandomSize();
+          const randomColor = getRandomColor();
           return (
             <motion.div
-            style={{width: `${randomSize}px`, height: `${randomSize}px`}}
+              style={{ width: `${randomSize}px`, height: `${randomSize}px` }}
               key={i}
               className={`z-1 absolute bottom-0 ${randomColor} opacity-0`}
               initial={{ y: 50, x: `${randX}vw` }}
@@ -65,7 +73,11 @@ const Home: NextPage = () => {
                 x: `${randX}vw`,
                 rotate: 720,
               }}
-              transition={{ duration: `${randomSize}`, repeat: Infinity, delay: randomDelay }}
+              transition={{
+                duration: `${randomSize}`,
+                repeat: Infinity,
+                delay: randomDelay,
+              }}
             ></motion.div>
           );
         })}
