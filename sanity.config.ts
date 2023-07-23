@@ -3,8 +3,6 @@ import {visionTool} from '@sanity/vision'
 import {deskTool} from 'sanity/desk'
 import {schemaTypes} from './dev-bros-blog/schemas'
 
-const devOnlyPlugins = []
-
 export default defineConfig({
   name: 'default',
   title: 'orchid-okapi',
@@ -12,7 +10,7 @@ export default defineConfig({
   projectId: 'w6w3s3mx',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool(), ...(isDev ? devOnlyPlugins : [])],
+  plugins: [deskTool(), visionTool()],
 
   schema: {
     types: schemaTypes,
