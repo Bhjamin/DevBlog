@@ -16,7 +16,7 @@ import urlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
 
 const Post: React.FC<{ post: BlogPost }> = ({ post }) => {
-  const { headerImage, author, content } = post;
+  const { headerImage, author, content } = post || {};
   console.log({ post });
 
   return (
